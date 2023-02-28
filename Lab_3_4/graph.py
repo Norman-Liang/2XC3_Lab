@@ -1,5 +1,5 @@
 import math
-from tqdm import tqdm
+# from tqdm import tqdm
 from collections import deque
 import copy
 import random
@@ -294,7 +294,8 @@ def test(nodes, edges, graphs):
     total_appx1 = 0 # sum of len of all MVCs gen by appx1(G)
     total_appx2 = 0
     total_appx3 = 0
-    for i in tqdm(range(graphs)):
+    # for i in tqdm(range(graphs)):
+    for i in range(graphs):
         G = rand_graph(nodes, edges)
         total_opt += len(MVC(G))
         total_appx1 += len(approx1(G))
