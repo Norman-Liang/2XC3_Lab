@@ -316,7 +316,7 @@ graphs = 1000
 n = 8
 
 # plotting funcs ;
-def exp1():
+def appx_exp1():
     exp_val1 = []
     exp_val2 = []
     exp_val3 = []
@@ -329,14 +329,14 @@ def exp1():
         num_edges.append(edges)
     return exp_val1, exp_val2, exp_val3, num_edges
 
-# exp_val1, exp_val2, exp_val3, num_edges = exp1()
+# exp_val1, exp_val2, exp_val3, num_edges = appx_exp1()
 
 # plot.plot(num_edges,exp_val1,'b-',label = "approx1")
 # plot.plot(num_edges,exp_val2,'r-',label = "approx2")
 # plot.plot(num_edges,exp_val3,'g-',label = "approx3")
 # plot.xlabel('no. of edges')
 
-def exp2():
+def appx_exp2():
     exp_val1 = []
     exp_val2 = []
     exp_val3 = []
@@ -349,7 +349,7 @@ def exp2():
         num_nodes.append(nodes)
     return exp_val1, exp_val2, exp_val3, num_nodes
 
-# exp_val1, exp_val2, exp_val3, num_nodes = exp2()
+# exp_val1, exp_val2, exp_val3, num_nodes = appx_exp2()
 
 # plot.plot(num_nodes,exp_val1,'b-',label = "approx1")
 # plot.plot(num_nodes,exp_val2,'r-',label = "approx2")
@@ -357,7 +357,7 @@ def exp2():
 # plot.xlabel('no. of nodes')
 
 # generate all possible edges for a graph of size 5;
-def generate_edges():
+def get_edges():
     nodes = [0, 1, 2, 3, 4]
     edges = []
     for i in range(len(nodes)):
@@ -365,16 +365,16 @@ def generate_edges():
             edges.append((nodes[i], nodes[j]))
     return edges
 
-# print((power_set(generate_edges())))
+# print((power_set(get_edges())))
 
 ''' func to get all possible graphs of size 5 using power set of edges &
 test approx1 on all these graphs : '''
-def exp3():
+def appx_exp3():
     exp_val1 = []
     num_edges = []
     G0 = Graph(5)
 
-    all_edges = generate_edges()
+    all_edges = get_edges()
     powset_edges = power_set(all_edges) # contains edges list for 1024 graphs
     sorted_powset = sorted(powset_edges, key=len)
     # print(sorted_powset)
@@ -390,7 +390,7 @@ def exp3():
         num_edges.append(len(i))
     return exp_val1, num_edges
 
-# exp_val1, num_edges = exp3()
+# exp_val1, num_edges = appx_exp3()
 # print(len(exp_val1))
 # plot.plot(num_edges,exp_val1,'b-',label = "approx1")
 # plot.xlabel('no. of edges')
