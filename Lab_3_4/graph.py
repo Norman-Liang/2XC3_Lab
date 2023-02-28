@@ -277,7 +277,6 @@ def approx3(G : Graph):
 # generates random graph with given no. of nodes & edges ;
 def rand_graph(nodes : int, edges : int):
     G = Graph(nodes)
-    # how to ensure graph is connected ?
     for i in range(edges):
         u = random.randint(0,G.get_size()-1)
         while True:
